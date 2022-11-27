@@ -1,0 +1,35 @@
+##################################
+# User data
+##################################
+type User {
+    _id: ID
+    username: String
+    password: String
+    fullName: String
+    avatar: String # base64
+}
+
+type LoginResponse {
+    access_token: String
+    refresh_token: String
+}
+
+extend type Mutation {
+    # ? --------------------------------
+    # TODO -> [Mutation for user]
+    # ? --------------------------------
+    helloUser: String
+    
+    register(
+        username: String!
+        password: String!
+        avatar: String
+        fullName: String
+    ): Boolean
+    
+    login(username: String!, password: String!): LoginResponse
+}
+
+extend type Query{
+    getUserInfo: User
+}

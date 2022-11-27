@@ -1,0 +1,1 @@
+# FastAPI + Graphql Template
