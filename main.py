@@ -5,6 +5,8 @@ from ariadne import load_schema_from_path,\
 from apis import query, mutation
 from libs.exception import format_error
 import uvicorn
+from connect import client
+from config import Config
 
 type_defs = load_schema_from_path('graphql')
 
@@ -15,6 +17,9 @@ schema = make_executable_schema(
 )
 
 app = FastAPI(debug=True)
+client.init_app(app, Config.MONGO_URI)
+
+
 app.mount('/graphql', GraphQL(schema=schema,
           debug=True, error_formatter=format_error))
 
