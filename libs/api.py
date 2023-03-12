@@ -30,7 +30,8 @@ class Api:
             try:
                 _type, _token = str(headers['authorization']).split(None, 1)
             except:
-                raise BaseException(message="token error", status=400, errors=['token is required'])
+                raise BaseException(message="token error",
+                                    status=400, errors=['token is required'])
             if _type.lower() != 'bearer':
                 return False
             return _token
@@ -40,10 +41,13 @@ class Api:
             if not _token:
                 return False
             try:
-                jwt.decode(_token, key=Config.JWT_SECRET_KEY_ACCESS, algorithms=['HS256'])
+                jwt.decode(_token, key=Config.JWT_SECRET_KEY_ACCESS,
+                           algorithms=['HS256'])
                 return True
             except:
-                raise BaseException(message="hello", status=403, errors=['token invalid'])
+                raise BaseException(
+                    message="hello", status=403, errors=['token invalid'])
+
         def internal(f):
             @wraps(f)
             def decorated(*args, **kwargs):
@@ -68,7 +72,8 @@ class Api:
                             raise Forbidden(_msg)
                         else:
                             raise BadRequest(_msg)
-                    _msg = message_str(msg="Some errors", errors="Some errors")
+                    _msg = message_str(msg="Some errors",
+                                       errors=["Some errors"])
                     raise BadRequest(_msg)
             return decorated
         return internal
