@@ -1,0 +1,4 @@
+include requirements.txt
+include LICENSE
+recursive-include fast_graphql *
+recursive-exclude * __pycache__

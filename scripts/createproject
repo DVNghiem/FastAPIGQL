@@ -1,0 +1,10 @@
+#!python
+import os
+try:
+    import fast_graphql
+except:
+    raise Exception('creatproject error:fast_graphql not install')
+
+_path = fast_graphql.__path__[0]
+
+os.system(f'cp -a {_path}/__initial/* .')

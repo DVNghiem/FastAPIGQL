@@ -1,12 +1,12 @@
-from connect import client, redis
-from libs.dao import DaoModel
+from fast_graphql.connect import client, redis
+from fast_graphql.libs.dao import DaoModel
 import bcrypt
-from config import Config
-from libs.exception import BaseException
+from fast_graphql.config import Config
+from fast_graphql.libs.exception import BaseException
 import jwt
-from config import Config
 
 db = client.db
+
 class UserHelper:
     def __init__(self) -> None:
         self.dao = DaoModel(db.user, redis)

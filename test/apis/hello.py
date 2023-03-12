@@ -1,4 +1,4 @@
-from libs import Api
+from fast_graphql.libs import Api
 
 
 class HelloQuery(Api):

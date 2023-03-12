@@ -1,3 +1,6 @@
 venv
 .env
 **/__pycache__
+fast_graphql/logfile.log
+fast_graphql.egg-info
+dist

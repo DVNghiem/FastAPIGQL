@@ -1,6 +1,6 @@
-from config import Config
+from fast_graphql.config import Config
 from redis import Redis
-from models import Mongo
+from fast_graphql.models import Mongo
 
 client = Mongo()
 

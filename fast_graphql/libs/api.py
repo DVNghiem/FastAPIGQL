@@ -4,8 +4,8 @@ from typing import Any
 from functools import wraps
 from .exception import BadRequest, Forbidden, BaseException
 from marshmallow import Schema
-from utils import message_str
-from config import Config
+from fast_graphql.utils import message_str
+from fast_graphql.config import Config
 import jwt
 
 

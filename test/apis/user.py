@@ -1,7 +1,7 @@
-from libs import Api
+from fast_graphql.libs import Api
 from helpers.user import UserHelper
 from schemas.user import RegisterSchema, LoginSchema
-from utils import get_headers
+from fast_graphql.utils import get_headers
 
 class UserAPIMutation(Api):
     def __init__(self, name: str) -> None:
